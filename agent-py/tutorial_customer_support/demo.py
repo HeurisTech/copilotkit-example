@@ -42,3 +42,6 @@ def main():
     """Run the uvicorn server."""
     port = int(os.getenv("PORT", "8000"))
     uvicorn.run("tutorial_customer_support.demo:app", host="0.0.0.0", port=port)
+
+if __name__ == "__main__":
+    main()
