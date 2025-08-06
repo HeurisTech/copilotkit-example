@@ -1,0 +1,19 @@
+{
+    "dependencies": [
+        ".",
+        "langgraph==0.2.52",
+        "langchain-core",
+        "langchain-anthropic",
+        "langchain-community",
+        "langchain",
+        "tavily-python",
+        "python-dotenv",
+        "uvicorn",
+        "pandas"
+    ],
+    "graphs": {
+        "customer_support_agent": "./tutorial_customer_support/agent.py:part_1_graph"
+    },
+    "env": ".env",
+    "python_version": "3.12"
+}
