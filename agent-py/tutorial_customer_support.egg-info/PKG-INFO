@@ -1,0 +1,14 @@
+Metadata-Version: 2.4
+Name: tutorial_customer_support
+Version: 0.0.1
+Requires-Dist: langgraph==0.2.52
+Requires-Dist: langchain_core
+Requires-Dist: langchain-google-genai
+Requires-Dist: langchain
+Requires-Dist: openai
+Requires-Dist: langchain-community
+Requires-Dist: langchain-anthropic
+Requires-Dist: tavily-python
+Requires-Dist: copilotkit==0.1.28a6
+Requires-Dist: python-dotenv
+Requires-Dist: uvicorn

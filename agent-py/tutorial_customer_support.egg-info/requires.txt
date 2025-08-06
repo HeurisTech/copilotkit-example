@@ -1,0 +1,11 @@
+langgraph==0.2.52
+langchain_core
+langchain-google-genai
+langchain
+openai
+langchain-community
+langchain-anthropic
+tavily-python
+copilotkit==0.1.28a6
+python-dotenv
+uvicorn
