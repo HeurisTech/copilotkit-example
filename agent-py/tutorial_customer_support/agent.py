@@ -1,9 +1,14 @@
+import os
 from datetime import datetime
+from dotenv import load_dotenv
 from langchain_anthropic import ChatAnthropic
 from langchain_community.tools.tavily_search import TavilySearchResults
 from langchain_core.runnables import RunnableConfig, Runnable
 from langchain_core.prompts import ChatPromptTemplate
 # NOTE: you must use langchain-core >= 0.3 with Pydantic v2
+
+# Load environment variables
+load_dotenv()
 
 from langgraph.checkpoint.memory import MemorySaver
 from langgraph.graph import StateGraph, START
@@ -62,9 +67,13 @@ class Assistant:
         return {"messages": result}
 
 
+# Configure LLM from environment variables with defaults
 # Haiku is faster and cheaper, but less accurate
 # llm = ChatAnthropic(model="claude-3-haiku-20240307")
-llm = ChatAnthropic(model="claude-3-sonnet-20240229", temperature=1)
+ANTHROPIC_MODEL = os.getenv("ANTHROPIC_MODEL", "claude-3-5-sonnet-latest")
+ANTHROPIC_TEMPERATURE = float(os.getenv("ANTHROPIC_TEMPERATURE", "1"))
+
+llm = ChatAnthropic(model=ANTHROPIC_MODEL, temperature=ANTHROPIC_TEMPERATURE)
 # You could swap LLMs, though you will likely want to update the prompts when
 # doing so!
 # from langchain_openai import ChatOpenAI
